@@ -16,14 +16,12 @@ class CategoriasController extends Controller{
             'ESPORTE',
             'LUXO'
         ];
+            
+        return view('categorias.index')->with('categorias', $categorias);
 
-        $html = '<ul>';
-        foreach($categorias as $categoria){
-            $html .= "<li>$categoria</li>";
-        }
-        $html .= '</ul>';
-        
-        return $html;
+    }
 
+    public function create(){
+        return view('categorias.create');
     }
 }
