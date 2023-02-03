@@ -19,6 +19,7 @@ class ClientesController extends Controller{
     }
     
     public function store(Request $request){
+        /*
         $nomeClientes = $request->input('nome');
         $cpfClientes = $request->input('cpf');
         $telefoneClientes = $request->input('telefone');
@@ -42,6 +43,8 @@ class ClientesController extends Controller{
         $cliente->telefone = $telefoneClientes;
         $cliente->rua = $ruaClientes;
         $cliente->save();
+        */
+        Cliente::create($request->except('_token'));
         return redirect('/clientes');
         
     }

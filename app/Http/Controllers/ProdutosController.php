@@ -19,6 +19,7 @@ class ProdutosController extends Controller{
     }
     
     public function store(Request $request){
+        /*
         $nomeProdutos = $request->input('nome');
         $descricaoProdutos = $request->input('descricao');
         $estoqueProdutos = $request->input('estoque');
@@ -32,7 +33,8 @@ class ProdutosController extends Controller{
         $produto->quantidade = $estoqueProdutos;
                 
         $produto->save();
-        
+        */
+        Produto::create($request->except('_token'));
         return redirect('/produtos');
         
     }

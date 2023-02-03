@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <label for="nome" class="form-label">Quantidade Estoque:</label>
-                    <input type="text" id="estoque" name="estoque" class="form-control" />    
+                    <input type="text" id="quantidade" name="quantidade" class="form-control" />    
                 </div>
                 <div class="col-sm-6">
                     <label for="nome" class="form-label">Preço Unitário:</label>
