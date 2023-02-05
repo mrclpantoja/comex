@@ -21,16 +21,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/categorias', CategoriasController::class)
+    ->except(['show']);
+/*
+Route::controller(CategoriasController::class)->group(function(){
+    Route::get('/categorias', 'index')->name('categorias.index');
+    Route::get('/categorias/criar', 'create')->name('categorias.create');
+    Route::post('/categorias/salvar', 'store')->name('categorias.store');
+});
+*/
+Route::resource('/clientes', ClientesController::class)
+    ->except(['show']);
+/*
+Route::controller(ClientesController::class)->group(function(){
+    Route::get('/clientes', 'index');
+    Route::get('/clientes/criar', 'create');
+    Route::post('/clientes/salvar', 'store');
+});
+*/
+Route::resource('/produtos', ProdutosController::class)
+    ->except(['show']);
+/*
+Route::controller(ProdutosController::class)->group(function(){
+    Route::get('/produtos', 'index');
+    Route::get('/produtos/criar', 'create');
+    Route::post('/produtos/salvar', 'store');
+});
+*/
 
-Route::get('/categorias', [CategoriasController::class, 'index']);
-Route::get('/categorias/criar', [CategoriasController::class, 'create']);
-Route::post('/categorias/salvar', [CategoriasController::class, 'store']);
-
-Route::get('/clientes', [ClientesController::class, 'index']);
-Route::get('/clientes/criar', [ClientesController::class, 'create']);
-Route::post('/clientes/salvar', [ClientesController::class, 'store']);
-
-Route::get('/produtos', [ProdutosController::class, 'index']);
-Route::get('/produtos/criar', [ProdutosController::class, 'create']);
-Route::post('/produtos/salvar', [ProdutosController::class, 'store']);
 
